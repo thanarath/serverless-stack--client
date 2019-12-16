@@ -10,7 +10,7 @@ import Routes from "./Routes";
 
 
 function App(props) {
-    const [isAuthenticating, setIsAuthenticating] =useState(true);
+    const [isAuthenticating, setIsAuthenticating] = useState(true);
     const [isAuthenticated, userHasAuthenticated] = useState(false);
     useEffect(() => {
         onLoad();
@@ -37,11 +37,11 @@ function App(props) {
             <Navbar fluid collapseOnSelect>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <Link to="/">Scratch</Link>
+                        <Link to="/Home">Scratch</Link>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>
-                    <Navbar.Collapse>
+                <Navbar.Collapse>
                     <Nav pullRight>
                         {isAuthenticated
                             ? <NavItem onClick={handleLogout}>Logout</NavItem>
@@ -54,7 +54,7 @@ function App(props) {
                                 </LinkContainer>
                             </>
                         }
-                        </Nav>
+                    </Nav>
                 </Navbar.Collapse>
             </Navbar>
             <Routes appProps={{ isAuthenticated, userHasAuthenticated }} />

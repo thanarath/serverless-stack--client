@@ -14,6 +14,7 @@ import UnauthenticatedRoute from "./components/UnauthenticatedRoute";
 export default function Routes({ appProps }) {
     return (
         <Switch>
+            <AppliedRoute path="/" exact component={Home} appProps={appProps} />
             <UnauthenticatedRoute path="/login" exact component=
                 {Login} appProps={appProps} />
             <UnauthenticatedRoute path="/signup" exact component=
@@ -22,6 +23,8 @@ export default function Routes({ appProps }) {
                 {NewNote} appProps={appProps} />
             <AuthenticatedRoute path="/notes/:id" exact component=
                 {Notes} appProps={appProps} />
+            <AuthenticatedRoute path="/Home" exact component=
+                {Home} appProps={appProps} />
             { /* Finally, catch all unmatched routes */}
             <Route component={NotFound} />
         </Switch>
